@@ -18,13 +18,13 @@ if sys.argv[-1] == 'publish':
     sys.exit()
 
 settings.update(
-    name='cielo',
-    version='0.1.5',
+    name='cieloApi3',
+    version='0.1.6',
     description='SDK API-3.0 Python 3 Cielo',
     author='Cosmo André',
     author_email='cosmo_moraes@hotmail.com',
-    url='https://github.com/cosmo9able/cielo',
-    keywords='fork api3.0 cielo python sdk ecommerce',
+    url='https://github.com/cosmo9able/cielo-python3',
+    keywords='fork api3.0 cielo python sdk ecommerce updated for python3 ',
     packages=find_packages(),
     install_requires=['requests', 'future'],
     license='MIT',
@@ -55,13 +55,13 @@ setup(**settings)
 # from setuptools import setup
 
 # setup(
-#     name='cielo',
+#     name='cieloApi3',
 #     version='0.1.1',
 #     url='',
 #     license='MIT License',
 #     author='Cosmo André',
 #     author_email='cosmo_moraes@hotmail.com',
-#     keywords='fork api3.0 cielo python sdk ecommerce',
+#     keywords='fork api3.0 cielo python sdk ecommerce updated for python3',
 #     description=u'',
 #     packages=['cielo.api30'],
 #     install_requires=['requests'],

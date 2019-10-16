@@ -3,7 +3,7 @@
 import sys
 sys.path.insert(0, "./")
 
-from cielo import *
+from cieloApi3 import *
 
 import json
 
@@ -40,7 +40,7 @@ cielo_ecommerce = CieloEcommerce(merchant, environment)
 # Criar a venda e imprime o retorno
 response_create_sale = cielo_ecommerce.create_sale(sale)
 print('----------------------response_create_sale----------------------')
-print json.dumps(response_create_sale, indent=2)
+print(son.dumps(response_create_sale, indent=2))
 print('----------------------response_create_sale----------------------')
 
 # Com a venda criada na Cielo, já temos o ID do pagamento, TID e demais
@@ -50,7 +50,7 @@ payment_id = sale.payment.payment_id
 # Com o ID do pagamento, podemos fazer uma consulta do pagamento
 response_get_sale = cielo_ecommerce.get_sale(payment_id)
 print('----------------------response_get_sale----------------------')
-print json.dumps(response_get_sale, indent=2)
+print(json.dumps(response_get_sale, indent=2))
 print('----------------------response_get_sale----------------------')
 
 print('\r\nLink Boleto:', sale.payment.url, '\r\n')

@@ -3,7 +3,7 @@
 import sys
 sys.path.insert(0, "./")
 
-from cielo import *
+from cieloApi3 import *
 
 import json
 
@@ -41,7 +41,7 @@ payment_id = sale.payment.payment_id
 # Com o ID do pagamento, podemos fazer uma consulta do pagamento
 response_get_sale = cielo_ecommerce.get_sale(payment_id)
 print('----------------------response_get_sale----------------------')
-print json.dumps(response_get_sale, indent=2)
+print(json.dumps(response_get_sale, indent=2))
 print('----------------------response_get_sale----------------------')
 
 print('\r\nLink Boleto:', sale.payment.url, '\r\n')

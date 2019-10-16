@@ -3,7 +3,7 @@
 import sys
 sys.path.insert(0, "./")
 
-from cielo import *
+from cieloApi3 import *
 
 import json
 

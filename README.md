@@ -1,7 +1,8 @@
 # API-3.0-Python
 
-SDK API-3.0 Python Cielo
-
+SDK API-3.0 Python Cielo(não oficial)
+<p>
+Eu tomei a iniciativa de clonar o repositorio oficial e atualizar o código para rodar no meu projeto que usa python 3.8, testei no python 3.7 e 3.6, tenha ciência de que essa não é uma biblioteca oficial, o uso é exatamente igual ao da oficial, você pode até mesmo usar a documentação oficial se preferir, o que foi feito foi apenas atualizações de string e impressao de variaveis para tornar compativel com as versões mais recentes, se você for um responsável cielo, e não quiser que este repositório continue disponível, basta me enviar um email que eu faço a remoção do mesmo, minha intenção é apenas ajudar a comunidade python.</p>
 
 
 * [Principais recursos](#principais-recursos)
@@ -37,14 +38,15 @@ Para criar um pagamento simples com cartão de crédito com o SDK, basta fazer:
 ## Instalação
 O API-3.0 Python Cielo pode ser facilmente instalado com o comando a seguir:
 ```bash
-pip install cieloApi3
+git clone https://github.com/cosmo9able/cielo-python3 && cd cielo-python3
+pip3 install .
 ```
 
 ## Exemplos
 ### Criando um pagamento com cartão de crédito
 
 ```python
-from cieloApi3 import *
+from cieloApi3 import  import *
 
 import json
 
@@ -76,9 +78,9 @@ cielo_ecommerce = CieloEcommerce(merchant, environment)
 
 # Criar a venda e imprime o retorno
 response_create_sale = cielo_ecommerce.create_sale(sale)
-print '----------------------response_create_sale----------------------'
-print json.dumps(response_create_sale, indent=2)
-print '----------------------response_create_sale----------------------'
+print('----------------------response_create_sale----------------------')
+print(json.dumps(response_create_sale, indent=2))
+print('----------------------response_create_sale----------------------')
 
 # Com a venda criada na Cielo, já temos o ID do pagamento, TID e demais
 # dados retornados pela Cielo
@@ -87,22 +89,22 @@ payment_id = sale.payment.payment_id
 # Com o ID do pagamento, podemos fazer sua captura,
 # se ela não tiver sido capturada ainda
 response_capture_sale = cielo_ecommerce.capture_sale(payment_id, 15700, 0)
-print '----------------------response_capture_sale----------------------'
-print json.dumps(response_capture_sale, indent=2)
-print '----------------------response_capture_sale----------------------'
+print('----------------------response_capture_sale----------------------')
+print(json.dumps(response_capture_sale, indent=2))
+print('----------------------response_capture_sale----------------------')
 
 # E também podemos fazer seu cancelamento, se for o caso
 response_cancel_sale = cielo_ecommerce.cancel_sale(payment_id, 15700)
-print '---------------------response_cancel_sale---------------------'
-print json.dumps(response_cancel_sale, indent=2)
-print '---------------------response_cancel_sale---------------------'
+print('---------------------response_cancel_sale---------------------')
+print(json.dumps(response_cancel_sale, indent=2))
+print('---------------------response_cancel_sale---------------------')
 ```
 
 
 ### Criando um pagamento recursivo com cartão de crédito
 ```python
 
-from cieloApi3 import *
+from cieloApi3 import  import *
 
 import json
 
@@ -139,9 +141,9 @@ cielo_ecommerce = CieloEcommerce(merchant, environment)
 
 # Criar a venda e imprime o retorno
 response_create_sale = cielo_ecommerce.create_sale(sale)
-print '----------------------response_create_sale----------------------'
-print json.dumps(response_create_sale, indent=2)
-print '----------------------response_create_sale----------------------'
+print('----------------------response_create_sale----------------------')
+print(json.dumps(response_create_sale, indent=2))
+print('----------------------response_create_sale----------------------')
 
 
 
@@ -152,15 +154,15 @@ payment_id = sale.payment.payment_id
 # Com o ID do pagamento, podemos fazer sua captura,
 # se ela não tiver sido capturada ainda
 response_capture_sale = cielo_ecommerce.capture_sale(payment_id, 15700, 0)
-print '----------------------response_capture_sale----------------------'
-print json.dumps(response_capture_sale, indent=2)
-print '----------------------response_capture_sale----------------------'
+print('----------------------response_capture_sale----------------------')
+print(json.dumps(response_capture_sale, indent=2))
+print('----------------------response_capture_sale----------------------')
 
 # E também podemos fazer seu cancelamento, se for o caso
 response_cancel_sale = cielo_ecommerce.cancel_sale(payment_id, 15700)
-print '---------------------response_cancel_sale---------------------'
-print json.dumps(response_cancel_sale, indent=2)
-print '---------------------response_cancel_sale---------------------'
+print('---------------------response_cancel_sale---------------------')
+print(json.dumps(response_cancel_sale, indent=2))
+print('---------------------response_cancel_sale---------------------')
 
 
 
@@ -169,15 +171,15 @@ recurrent_payment_id = sale.payment.recurrent_payment.recurrent_payment_id
 
 # Consulta informações da venda recorrente
 response_get_recurrent_payment = cielo_ecommerce.get_recurrent_payment(recurrent_payment_id)
-print '---------------------response_get_recurrent_payment---------------------'
-print json.dumps(response_get_recurrent_payment, indent=2)
-print '---------------------response_get_recurrent_payment---------------------'
+print('---------------------response_get_recurrent_payment---------------------')
+print(json.dumps(response_get_recurrent_payment, indent=2))
+print('---------------------response_get_recurrent_payment---------------------')
 ```
 
 
 ### Criando um agendamento de pagamento recursivo com cartão de crédito
 ```python
-from cieloApi3 import *
+from cieloApi3 import  import *
 
 import json
 
@@ -215,14 +217,14 @@ cielo_ecommerce = CieloEcommerce(merchant, environment)
 
 # Criar a venda e imprime o retorno
 response_create_sale = cielo_ecommerce.create_sale(sale)
-print '----------------------response_create_sale----------------------'
-print json.dumps(response_create_sale, indent=2)
-print '----------------------response_create_sale----------------------'
+print('----------------------response_create_sale----------------------')
+print(json.dumps(response_create_sale, indent=2))
+print('----------------------response_create_sale----------------------')
 ```
 
 ### Gerando token de cartão de crédito e criando um pagamento com o token
 ```python
-from cieloApi3 import *
+from cieloApi3 import  import *
 
 import json
 
@@ -245,13 +247,13 @@ cielo_ecommerce = CieloEcommerce(merchant, environment)
 
 # Criar a venda e imprime o retorno
 response_create_card_token = cielo_ecommerce.create_card_token(credit_card)
-print '----------------------response_create_card_token----------------------'
-print json.dumps(response_create_card_token, indent=2)
-print '----------------------response_create_card_token----------------------'
+print('----------------------response_create_card_token----------------------')
+print(json.dumps(response_create_card_token, indent=2))
+print('----------------------response_create_card_token----------------------')
 
 # Com o cartão gerado token na Cielo, já temos o Token do cartão para uma futura cobrança
 new_card_token = credit_card.card_token
-print 'New Card Token:', new_card_token
+print('New Card Token:', new_card_token)
 
 # Crie uma instância de Sale informando o ID do pagamento
 sale = Sale('456')
@@ -272,14 +274,14 @@ cielo_ecommerce = CieloEcommerce(merchant, environment)
 
 # Criar a venda e imprime o retorno
 response_create_sale = cielo_ecommerce.create_sale(sale)
-print '----------------------response_create_sale----------------------'
-print json.dumps(response_create_sale, indent=2)
-print '----------------------response_create_sale----------------------'
+print('----------------------response_create_sale----------------------')
+print(json.dumps(response_create_sale, indent=2))
+print('----------------------response_create_sale----------------------')
 ```
 
 ### Gerando um boleto simples
 ```python
-from cieloApi3 import *
+from cieloApi3 import  import *
 
 import json
 
@@ -306,9 +308,9 @@ cielo_ecommerce = CieloEcommerce(merchant, environment)
 
 # Criar a venda e imprime o retorno
 response_create_sale = cielo_ecommerce.create_sale(sale)
-print '----------------------response_create_sale----------------------'
-print json.dumps(response_create_sale, indent=2)
-print '----------------------response_create_sale----------------------'
+print('----------------------response_create_sale----------------------')
+print(json.dumps(response_create_sale, indent=2))
+print('----------------------response_create_sale----------------------')
 
 # Com a venda criada na Cielo, já temos o ID do pagamento, TID e demais
 # dados retornados pela Cielo
@@ -316,16 +318,16 @@ payment_id = sale.payment.payment_id
 
 # Com o ID do pagamento, podemos fazer uma consulta do pagamento
 response_get_sale = cielo_ecommerce.get_sale(payment_id)
-print '----------------------response_get_sale----------------------'
-print json.dumps(response_get_sale, indent=2)
-print '----------------------response_get_sale----------------------'
+print('----------------------response_get_sale----------------------')
+print(json.dumps(response_get_sale, indent=2))
+print('----------------------response_get_sale----------------------')
 
-print '\r\nLink Boleto:', sale.payment.url, '\r\n'
+print('\r\nLink Boleto:', sale.payment.url, '\r\n')
 ```
 
 ### Gerando um boleto completo
 ```python
-from cieloApi3 import *
+from cieloApi3 import  import *
 
 import json
 
@@ -361,9 +363,9 @@ cielo_ecommerce = CieloEcommerce(merchant, environment)
 
 # Criar a venda e imprime o retorno
 response_create_sale = cielo_ecommerce.create_sale(sale)
-print '----------------------response_create_sale----------------------'
-print json.dumps(response_create_sale, indent=2)
-print '----------------------response_create_sale----------------------'
+print('----------------------response_create_sale----------------------')
+print(json.dumps(response_create_sale, indent=2))
+print('----------------------response_create_sale----------------------')
 
 # Com a venda criada na Cielo, já temos o ID do pagamento, TID e demais
 # dados retornados pela Cielo
@@ -371,14 +373,14 @@ payment_id = sale.payment.payment_id
 
 # Com o ID do pagamento, podemos fazer uma consulta do pagamento
 response_get_sale = cielo_ecommerce.get_sale(payment_id)
-print '----------------------response_get_sale----------------------'
-print json.dumps(response_get_sale, indent=2)
-print '----------------------response_get_sale----------------------'
+print('----------------------response_get_sale----------------------')
+print(json.dumps(response_get_sale, indent=2))
+print('----------------------response_get_sale----------------------')
 
-print '\r\nLink Boleto:', sale.payment.url, '\r\n'
+print('\r\nLink Boleto:', sale.payment.url, '\r\n')
 ```
 
-## Manual Oficial da Cielo
+## Manual Não Oficial da Cielo
 
 Para mais informações sobre a integração com a API 3.0 da Cielo, vide o manual em: [Integração API 3.0](https://developercielo.github.io/Webservice-3.0/)
 # cielo-python3
